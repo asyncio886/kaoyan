@@ -15,23 +15,25 @@ Next createNext(string s)
     next.length = s.size();
     next.arr = (int *)malloc(sizeof(int) * s.size());
     int *arr = next.arr;
-    for (int i = 0; i < next.length; i++)
+    arr[0] = -1;
+    for (int i = 1; i < next.length; i++)
     {
-        if (i == 0 || i == 1)
+        if (i == 1)
         {
             arr[i] = 0;
         }
         else
         {
-            // 最长前后缀是否可以拓展
-            if (s[i - 1] == s[arr[i - 1]])
+            // 对[0, i - 1]范围进行运算
+            // 拿到前面 i - 1 个字符的最长公共前后缀
+            int len = arr[i - 1];
+            // 需要加入的字符
+            char target = s[i - 1];
+            while (len > -1 && s[len] != target /* 公共前缀的后面一个字符和target不同，调整长度 */)
             {
-                arr[i] = arr[i - 1] + 1;
+                len = arr[len];
             }
-            else
-            {
-                arr[i] = 0;
-            }
+            arr[i] = len + 1;
         }
     }
     return next;
