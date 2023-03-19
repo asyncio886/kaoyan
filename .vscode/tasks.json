@@ -12,8 +12,8 @@
                 "${workspaceFolder}/cs/out/${fileBasenameNoExtension}",
                 "-I",
                 "${workspaceFolder}/cs/utils",
-                // "-I",
-                // "${fileDirname}"
+                "-I",
+                "${fileDirname}"
             ],
             "options": {
                 "cwd": "${fileDirname}"
