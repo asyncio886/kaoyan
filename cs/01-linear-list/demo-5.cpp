@@ -4,7 +4,7 @@ int getSubDict(int value1, int value2)
     int res;
     return (res = (value1 - value2)) < 0 ? -res : res;
 }
-
+// TODO 优化为滑动窗口
 int minDict(int **arrs, int len)
 {
     int *arr1 = arrs[0], *arr2 = arrs[1], *arr3 = arrs[2];

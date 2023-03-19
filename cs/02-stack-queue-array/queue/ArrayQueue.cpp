@@ -22,7 +22,12 @@ public:
     bool isEmpty();
     bool isFull();
     void printValue();
+    int currentSize();
 };
+
+int ArrayQueue::currentSize() {
+    return (rear - front + length) % length;
+}
 
 ArrayQueue::ArrayQueue()
 {
@@ -96,4 +101,5 @@ int main()
     queue->printValue();
     queue->poll();
     queue->printValue();
+    free(queue);
 }
