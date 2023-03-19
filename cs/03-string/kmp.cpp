@@ -25,7 +25,7 @@ Next createNext(string s)
         else
         {
             // 对[0, i - 1]范围进行运算
-            // 拿到前面 i - 1 个字符的最长公共前后缀
+            // 拿到前面 i - 1 个字符的最长公共前后缀长度
             int len = arr[i - 1];
             // 需要加入的字符
             char target = s[i - 1];

@@ -8,6 +8,7 @@ using namespace std;
 // 记录优先级
 const char op[][2] = {{'+', '-'},
                       {'*', '/'},
+                      // e是凑数的
                       {'(', 'e'}};
 
 int getState(char c)
@@ -16,7 +17,7 @@ int getState(char c)
     {
         for (int j = 0; j < 2; j++)
         {
-            if (op[i][j] == c)
+            if (op[i][j] == c && op[i][j] != 'e')
             {
                 return i;
             }
